@@ -145,7 +145,7 @@ function hoverIconBox(element, reverse, color) {
     }, 0)
 }
 
-function clickIconBox(container, element, colorPre, colorPost) {
+function clickIconBox(container, element, colorPre, colorPost, formField=false) {
     /*
     ACTION:		Changes design of button when clicked and executes action
     -----
