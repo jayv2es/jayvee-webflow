@@ -42,6 +42,65 @@ function getCookie(cname) {
   return "";
 }
 
+// LOADING SCREEN
+
+function displayLoadingScreen(container, title, text, color) {
+    /*  
+    ACTION:		Displays a loading screen inside a given container
+    -----
+    PARAMS:		container	  The div where the HTML should be replaced by the loading screen
+              title       The title of the loading screen
+              text        The text of the loading screen
+              color       The color of the loading screen elements
+    FLAGS:		-
+    -----
+    RETURNS:	-
+    */
+    var newClass = "loading-screen";
+    var newInnerHTML = `
+      <div class="loading-screen-title">${title}</div>
+      <div class="loading-screen-loader">
+        <svg class="loader" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="100%" height="100%" version="1.1" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd"
+        viewBox="0 0 2480 3507"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+          <g id="Ebene_x0020_1">
+            <metadata id="CorelCorpID_0Corel-Layer"/>
+            <path fill="${color}" d="M1240 1473c155,0 281,126 281,281 0,155 -126,281 -281,281 -68,0 -130,-24 -178,-64l101 0c9,0 16,-7 16,-16l0 0c0,-9 -7,-16 -16,-16l-134 0c-43,-49 -69,-114 -69,-185 0,-155 126,-281 281,-281zm20 64l80 14c8,1 14,9 12,17l-39 223c-1,8 -9,14 -17,12l-80 -14 0 0 0 0 0 0c-9,-2 -14,-10 -13,-18l6 -32c1,-8 9,-15 18,-13l1 0c8,1 14,10 12,19l-2 10c-1,3 2,6 5,7l37 7c3,1 6,-2 7,-5l32 -179c1,-3 -2,-6 -5,-7l-58 -10c-9,-2 -14,-10 -13,-18l0 0c2,-9 10,-14 18,-13zm-36 280l11 80c0,1 1,2 2,2 1,0 2,0 3,-1l37 -71c3,-6 9,-9 16,-7l0 0c5,1 9,4 11,8 2,5 2,9 0,14l-68 123c-2,4 -7,6 -12,6 -5,-1 -8,-4 -9,-9l-22 -139c-1,-5 1,-10 4,-13 4,-4 8,-5 13,-4l0 0c6,1 11,6 12,12z"/>
+          </g>
+        </svg>
+      </div>
+      <div class="loading-screen-p">${text}</div>
+    </div>
+    <style>
+      .loading-screen-title {
+        color: ${color};
+        font-weight: 700;
+      }
+      .loading-screen-p {
+        color: ${color};
+        font-weight: 400;
+      }
+      .loading-screen-loader {
+        animation: spin 1s linear infinite;
+      }
+      .loading-screen {
+        justify-content: center;
+        align-items: center;
+        font-family: "Quicksand";
+        text-align: center;
+        font-size: 20px;
+      }
+      @keyframes spin{
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    </style>`;
+    let oldClass = $(container).attr("class");
+    $(container).attr("class", `${oldClass} ${newClass}`);
+    $(container).html(newInnerHTML);
+}
+
+
 // INIT FUNCTIONS
 
 function initializeArrowButton(element, color) {
@@ -150,7 +209,7 @@ function hoverTextOrIconBox(element, reverse, color) {
         "background-color",
         `rgba(${hexToRgb(color).r}, ${hexToRgb(color).g}, ${
           hexToRgb(color).b
-        }, 0.2)`
+        }, 0.4)`
       );
       element.css("cursor", "pointer");
     } else {
@@ -276,6 +335,8 @@ $(document).ready(() => {
   /* --------------------------------------------------------------------
     INITIALIZE
     -------------------------------------------------------------------- */
+  $('#edu-tutoring-form-submit-error').hide();
+  
   initializeArrowButton($("#main-intro-button-1"), "#000000");
   initializeArrowButton($("#main-summary-button-1"), "#FFFFFF");
   initializeArrowButton($("#main-summary-button-2"), "#FFFFFF");
@@ -518,8 +579,15 @@ $(document).ready(() => {
     hoverTextOrIconBox($("#edu-tutoring-form-submit"), true, "#FFFFFF");
   });
   $("#edu-tutoring-form-submit").on("click", () => {
-    console.log(sessionStorage.getItem("edu-tutoring-input-1"));
-    console.log(sessionStorage.getItem("edu-tutoring-input-2"));
-    console.log(sessionStorage.getItem("edu-tutoring-input-3"));
+    // Check if any input empty
+    for(let i=0; i<3; i++) {
+      if(!sessionStorage.getItem(`edu-tutoring-input-${i+1}`)) {
+        $('#edu-tutoring-form-submit-error').show();
+        break;
+      } else {
+        $('#edu-tutoring-form-submit-error').hide();
+        displayLoadingScreen($('#edu-tutoring-form'), "Bitte einen Moment Geduld...", "Wir sind auf der Suche nach dem besten Angebot nur für Dich :)", '#FFFFFF');
+      }
+    }
   });
 });
