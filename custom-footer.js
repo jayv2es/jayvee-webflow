@@ -51,7 +51,6 @@ function displayLoadingScreen(container, title, text, color) {
     PARAMS:		container	  The div where the HTML should be replaced by the loading screen
               title       The title of the loading screen
               text        The text of the loading screen
-              color       The color of the loading screen elements
     FLAGS:		-
     -----
     RETURNS:	-
