@@ -1,0 +1,20 @@
+/* --------------------------------------------------------------------
+SPECIFIC FUNCTIONS: EDU
+-------------------------------------------------------------------- */
+
+function eduConfigureOffer(selectedBox1, selectedBox2, selectedBox3) {
+  /*
+    ACTION:		Reads in selection box choices and returns a new HTML presenting the best
+                offer based on the users choices.
+    -----
+    PARAMS:		selectedBox(i)      The container index of the selected icon box inside its container,
+                                    where i is the container number.
+    FLAGS:		-
+    -----
+    RETURNS:	newHTML             The new HTML inside #edu-tutoring-form, where the best
+                                    option gets presented.          
+    */
+  switch (selectedBox1) {
+    case 1:
+  }
+}
