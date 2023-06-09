@@ -107,10 +107,6 @@ function clickIconBox(
     if (formField) {
       formField.val(element.find("h3")[0].innerHTML);
     }
-    if (cookieKey) {
-      // We use session storage here instead of the normal cookie
-      sessionStorage.setItem(cookieKey, element.find("h3")[0].innerHTML);
-    }
     // Reset style and event listeners of the other icon boxes in the container
     for (var j = 0; j < container[0].children.length; j++) {
       let currElement = $(container[0].children[j].children[0]);
@@ -138,7 +134,13 @@ function clickIconBox(
             cookieKey
           );
         });
-      }
+      } else {
+        // If cookie key given, set cookie equal the index of the selection box within its container
+        if (cookieKey) {
+          // We use session storage here instead of the normal cookie and save the index within the container as value
+          sessionStorage.setItem(cookieKey, j);
+    	};
+      };
     }
   }, 0);
 }

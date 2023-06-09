@@ -1,9 +1,10 @@
 {
-    "000": {
-        "packageName": "EASY GOING",
-        "packagePrice": "CHF 200",
-        "packageLessons": "1 Lektion pro Woche",
-        "packageSupport": "Schriftlicher Support, 1x pro Tag",
-        "packageMedium": "Online-Unterricht"
-    }
+  "000": {
+    "packageName": "EASY GOING",
+    "packagePriceNumber": "CHF 200",
+    "packagePriceInterval": "pro Monat",
+    "packageLessons": "1 Lektion pro Woche",
+    "packageSupport": "Schriftlicher Support, 1x pro Tag",
+    "packageMedium": "Online-Unterricht"
+  }
 }
