@@ -1,0 +1,9 @@
+{
+    "000": {
+        "packageName": "EASY GOING",
+        "packagePrice": "CHF 200",
+        "packageLessons": "1 Lektion pro Woche",
+        "packageSupport": "Schriftlicher Support, 1x pro Tag",
+        "packageMedium": "Online-Unterricht"
+    }
+}
