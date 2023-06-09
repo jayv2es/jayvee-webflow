@@ -2,7 +2,7 @@
 SPECIFIC FUNCTIONS: EDU
 -------------------------------------------------------------------- */
 
-function eduConfigureOffer(selectedBox1, selectedBox2, selectedBox3) {
+function eduConfigurePackage(selectedBox1, selectedBox2, selectedBox3) {
   /*
     ACTION:		Reads in selection box choices and returns a new HTML presenting the best
                 offer based on the users choices.
@@ -13,8 +13,18 @@ function eduConfigureOffer(selectedBox1, selectedBox2, selectedBox3) {
     -----
     RETURNS:	newHTML             The new HTML inside #edu-tutoring-form, where the best
                                     option gets presented.          
-    */
-  switch (selectedBox1) {
-    case 1:
+  */
+  var packageTitle = "";
+  var packagePrice = "";
+  var packageBullet1 = "";
+  var packageBullet2 = "";
+  var packageBullet3 = "";
+  var selection = [selectedBox1, selectedBox2, selectedBox3];
+  // Define package based on selection box choices
+  switch(selection) {
+    case [0,0,0]: {
+      packageId = 
+    }
   }
+  
 }

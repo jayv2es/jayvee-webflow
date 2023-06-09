@@ -1,219 +1,222 @@
 /* --------------------------------------------------------------------
-MAIN CODE: JAYVEE/EDU
--------------------------------------------------------------------- */
-
-$(document).ready(() => {
-  /* --------------------------------------------------------------------
-  RESET STORAGE AND COOKIES
+  MAIN CODE: JAYVEE/EDU
   -------------------------------------------------------------------- */
-  sessionStorage.removeItem("edu-tutoring-input-1");
-  sessionStorage.removeItem("edu-tutoring-input-2");
-  sessionStorage.removeItem("edu-tutoring-input-3");
 
-  /* --------------------------------------------------------------------
-  INITIALIZE
-  -------------------------------------------------------------------- */
-  $('#edu-tutoring-form-submit-error').hide();
-  
-  initializeArrowButton($("#edu-intro-button-1"), "#FFFFFF");
-  initializeArrowButton($("#edu-intro-button-2"), "#FFFFFF");
+  $(document).ready(() => {
+    /* --------------------------------------------------------------------
+    RESET STORAGE AND COOKIES
+    -------------------------------------------------------------------- */
+    sessionStorage.removeItem("edu-tutoring-input-1");
+    sessionStorage.removeItem("edu-tutoring-input-2");
+    sessionStorage.removeItem("edu-tutoring-input-3");
 
-  initializeIconBox($("#edu-tutoring-form-1-1"), "#FFFFFF");
-  initializeIconBox($("#edu-tutoring-form-1-2"), "#FFFFFF");
-  initializeIconBox($("#edu-tutoring-form-1-3"), "#FFFFFF");
-  initializeIconBox($("#edu-tutoring-form-2-1"), "#FFFFFF");
-  initializeIconBox($("#edu-tutoring-form-2-2"), "#FFFFFF");
-  initializeIconBox($("#edu-tutoring-form-2-3"), "#FFFFFF");
-  initializeIconBox($("#edu-tutoring-form-3-1"), "#FFFFFF");
-  initializeIconBox($("#edu-tutoring-form-3-2"), "#FFFFFF");
-  initializeIconBox($("#edu-tutoring-form-3-3"), "#FFFFFF");
+    /* --------------------------------------------------------------------
+    INITIALIZE
+    -------------------------------------------------------------------- */
+    $('#edu-tutoring-form-submit-error').hide();
 
-  $("#edu-intro-button-1").on("mouseenter", () => {
-    hoverArrowButton($("#edu-intro-button-1"), false);
-  });
-  $("#edu-intro-button-1").on("mouseleave", () => {
-    hoverArrowButton($("#edu-intro-button-1"), true);
-  });
+    initializeArrowButton($("#edu-intro-button-1"), "#FFFFFF");
+    initializeArrowButton($("#edu-intro-button-2"), "#FFFFFF");
 
-  $("#edu-intro-button-2").on("mouseenter", () => {
-    hoverArrowButton($("#edu-intro-button-2"), false);
-  });
-  $("#edu-intro-button-2").on("mouseleave", () => {
-    hoverArrowButton($("#edu-intro-button-2"), true);
-  });
+    initializeIconBox($("#edu-tutoring-form-1-1"), "#FFFFFF");
+    initializeIconBox($("#edu-tutoring-form-1-2"), "#FFFFFF");
+    initializeIconBox($("#edu-tutoring-form-1-3"), "#FFFFFF");
+    initializeIconBox($("#edu-tutoring-form-2-1"), "#FFFFFF");
+    initializeIconBox($("#edu-tutoring-form-2-2"), "#FFFFFF");
+    initializeIconBox($("#edu-tutoring-form-2-3"), "#FFFFFF");
+    initializeIconBox($("#edu-tutoring-form-3-1"), "#FFFFFF");
+    initializeIconBox($("#edu-tutoring-form-3-2"), "#FFFFFF");
+    initializeIconBox($("#edu-tutoring-form-3-3"), "#FFFFFF");
 
-  /* --------------------------------------------------------------------
-  EDU / TUTORING: ICON BOXES
-  -------------------------------------------------------------------- */
-  $("#edu-tutoring-form-1-1").on("mouseenter", () => {
-    hoverTextOrIconBox($("#edu-tutoring-form-1-1"), false, "#FFFFFF");
-  });
-  $("#edu-tutoring-form-1-1").on("mouseleave", () => {
-    hoverTextOrIconBox($("#edu-tutoring-form-1-1"), true, "#FFFFFF");
-  });
-  $("#edu-tutoring-form-1-1").on("click", () => {
-    clickIconBox(
-      $("#edu-tutoring-form-1"),
-      $("#edu-tutoring-form-1-1"),
-      "#FFFFFF",
-      "#969939",
-      false,
-      "edu-tutoring-input-1"
-    );
-  });
+    $("#edu-intro-button-1").on("mouseenter", () => {
+      hoverArrowButton($("#edu-intro-button-1"), false);
+    });
+    $("#edu-intro-button-1").on("mouseleave", () => {
+      hoverArrowButton($("#edu-intro-button-1"), true);
+    });
 
-  $("#edu-tutoring-form-1-2").on("mouseenter", () => {
-    hoverTextOrIconBox($("#edu-tutoring-form-1-2"), false, "#FFFFFF");
-  });
-  $("#edu-tutoring-form-1-2").on("mouseleave", () => {
-    hoverTextOrIconBox($("#edu-tutoring-form-1-2"), true, "#FFFFFF");
-  });
-  $("#edu-tutoring-form-1-2").on("click", () => {
-    clickIconBox(
-      $("#edu-tutoring-form-1"),
-      $("#edu-tutoring-form-1-2"),
-      "#FFFFFF",
-      "#969939",
-      false,
-      "edu-tutoring-input-1"
-    );
-  });
+    $("#edu-intro-button-2").on("mouseenter", () => {
+      hoverArrowButton($("#edu-intro-button-2"), false);
+    });
+    $("#edu-intro-button-2").on("mouseleave", () => {
+      hoverArrowButton($("#edu-intro-button-2"), true);
+    });
 
-  $("#edu-tutoring-form-1-3").on("mouseenter", () => {
-    hoverTextOrIconBox($("#edu-tutoring-form-1-3"), false, "#FFFFFF");
-  });
-  $("#edu-tutoring-form-1-3").on("mouseleave", () => {
-    hoverTextOrIconBox($("#edu-tutoring-form-1-3"), true, "#FFFFFF");
-  });
-  $("#edu-tutoring-form-1-3").on("click", () => {
-    clickIconBox(
-      $("#edu-tutoring-form-1"),
-      $("#edu-tutoring-form-1-3"),
-      "#FFFFFF",
-      "#969939",
-      false,
-      "edu-tutoring-input-1"
-    );
-  });
+    /* --------------------------------------------------------------------
+    EDU / TUTORING: ICON BOXES
+    -------------------------------------------------------------------- */
+    $("#edu-tutoring-form-1-1").on("mouseenter", () => {
+      hoverTextOrIconBox($("#edu-tutoring-form-1-1"), false, "#FFFFFF");
+    });
+    $("#edu-tutoring-form-1-1").on("mouseleave", () => {
+      hoverTextOrIconBox($("#edu-tutoring-form-1-1"), true, "#FFFFFF");
+    });
+    $("#edu-tutoring-form-1-1").on("click", () => {
+      clickIconBox(
+        $("#edu-tutoring-form-1"),
+        $("#edu-tutoring-form-1-1"),
+        "#FFFFFF",
+        "#969939",
+        false,
+        "edu-tutoring-input-1"
+      );
+    });
 
-  $("#edu-tutoring-form-2-1").on("mouseenter", () => {
-    hoverTextOrIconBox($("#edu-tutoring-form-2-1"), false, "#FFFFFF");
-  });
-  $("#edu-tutoring-form-2-1").on("mouseleave", () => {
-    hoverTextOrIconBox($("#edu-tutoring-form-2-1"), true, "#FFFFFF");
-  });
-  $("#edu-tutoring-form-2-1").on("click", () => {
-    clickIconBox(
-      $("#edu-tutoring-form-2"),
-      $("#edu-tutoring-form-2-1"),
-      "#FFFFFF",
-      "#969939",
-      false,
-      "edu-tutoring-input-2"
-    );
-  });
+    $("#edu-tutoring-form-1-2").on("mouseenter", () => {
+      hoverTextOrIconBox($("#edu-tutoring-form-1-2"), false, "#FFFFFF");
+    });
+    $("#edu-tutoring-form-1-2").on("mouseleave", () => {
+      hoverTextOrIconBox($("#edu-tutoring-form-1-2"), true, "#FFFFFF");
+    });
+    $("#edu-tutoring-form-1-2").on("click", () => {
+      clickIconBox(
+        $("#edu-tutoring-form-1"),
+        $("#edu-tutoring-form-1-2"),
+        "#FFFFFF",
+        "#969939",
+        false,
+        "edu-tutoring-input-1"
+      );
+    });
 
-  $("#edu-tutoring-form-2-2").on("mouseenter", () => {
-    hoverTextOrIconBox($("#edu-tutoring-form-2-2"), false, "#FFFFFF");
-  });
-  $("#edu-tutoring-form-2-2").on("mouseleave", () => {
-    hoverTextOrIconBox($("#edu-tutoring-form-2-2"), true, "#FFFFFF");
-  });
-  $("#edu-tutoring-form-2-2").on("click", () => {
-    clickIconBox(
-      $("#edu-tutoring-form-2"),
-      $("#edu-tutoring-form-2-2"),
-      "#FFFFFF",
-      "#969939",
-      false,
-      "edu-tutoring-input-2"
-    );
-  });
+    $("#edu-tutoring-form-1-3").on("mouseenter", () => {
+      hoverTextOrIconBox($("#edu-tutoring-form-1-3"), false, "#FFFFFF");
+    });
+    $("#edu-tutoring-form-1-3").on("mouseleave", () => {
+      hoverTextOrIconBox($("#edu-tutoring-form-1-3"), true, "#FFFFFF");
+    });
+    $("#edu-tutoring-form-1-3").on("click", () => {
+      clickIconBox(
+        $("#edu-tutoring-form-1"),
+        $("#edu-tutoring-form-1-3"),
+        "#FFFFFF",
+        "#969939",
+        false,
+        "edu-tutoring-input-1"
+      );
+    });
 
-  $("#edu-tutoring-form-2-3").on("mouseenter", () => {
-    hoverTextOrIconBox($("#edu-tutoring-form-2-3"), false, "#FFFFFF");
-  });
-  $("#edu-tutoring-form-2-3").on("mouseleave", () => {
-    hoverTextOrIconBox($("#edu-tutoring-form-2-3"), true, "#FFFFFF");
-  });
-  $("#edu-tutoring-form-2-3").on("click", () => {
-    clickIconBox(
-      $("#edu-tutoring-form-2"),
-      $("#edu-tutoring-form-2-3"),
-      "#FFFFFF",
-      "#969939",
-      false,
-      "edu-tutoring-input-2"
-    );
-  });
+    $("#edu-tutoring-form-2-1").on("mouseenter", () => {
+      hoverTextOrIconBox($("#edu-tutoring-form-2-1"), false, "#FFFFFF");
+    });
+    $("#edu-tutoring-form-2-1").on("mouseleave", () => {
+      hoverTextOrIconBox($("#edu-tutoring-form-2-1"), true, "#FFFFFF");
+    });
+    $("#edu-tutoring-form-2-1").on("click", () => {
+      clickIconBox(
+        $("#edu-tutoring-form-2"),
+        $("#edu-tutoring-form-2-1"),
+        "#FFFFFF",
+        "#969939",
+        false,
+        "edu-tutoring-input-2"
+      );
+    });
 
-  $("#edu-tutoring-form-3-1").on("mouseenter", () => {
-    hoverTextOrIconBox($("#edu-tutoring-form-3-1"), false, "#FFFFFF");
-  });
-  $("#edu-tutoring-form-3-1").on("mouseleave", () => {
-    hoverTextOrIconBox($("#edu-tutoring-form-3-1"), true, "#FFFFFF");
-  });
-  $("#edu-tutoring-form-3-1").on("click", () => {
-    clickIconBox(
-      $("#edu-tutoring-form-3"),
-      $("#edu-tutoring-form-3-1"),
-      "#FFFFFF",
-      "#969939",
-      false,
-      "edu-tutoring-input-3"
-    );
-  });
+    $("#edu-tutoring-form-2-2").on("mouseenter", () => {
+      hoverTextOrIconBox($("#edu-tutoring-form-2-2"), false, "#FFFFFF");
+    });
+    $("#edu-tutoring-form-2-2").on("mouseleave", () => {
+      hoverTextOrIconBox($("#edu-tutoring-form-2-2"), true, "#FFFFFF");
+    });
+    $("#edu-tutoring-form-2-2").on("click", () => {
+      clickIconBox(
+        $("#edu-tutoring-form-2"),
+        $("#edu-tutoring-form-2-2"),
+        "#FFFFFF",
+        "#969939",
+        false,
+        "edu-tutoring-input-2"
+      );
+    });
 
-  $("#edu-tutoring-form-3-2").on("mouseenter", () => {
-    hoverTextOrIconBox($("#edu-tutoring-form-3-2"), false, "#FFFFFF");
-  });
-  $("#edu-tutoring-form-3-2").on("mouseleave", () => {
-    hoverTextOrIconBox($("#edu-tutoring-form-3-2"), true, "#FFFFFF");
-  });
-  $("#edu-tutoring-form-3-2").on("click", () => {
-    clickIconBox(
-      $("#edu-tutoring-form-3"),
-      $("#edu-tutoring-form-3-2"),
-      "#FFFFFF",
-      "#969939",
-      false,
-      "edu-tutoring-input-3"
-    );
-  });
+    $("#edu-tutoring-form-2-3").on("mouseenter", () => {
+      hoverTextOrIconBox($("#edu-tutoring-form-2-3"), false, "#FFFFFF");
+    });
+    $("#edu-tutoring-form-2-3").on("mouseleave", () => {
+      hoverTextOrIconBox($("#edu-tutoring-form-2-3"), true, "#FFFFFF");
+    });
+    $("#edu-tutoring-form-2-3").on("click", () => {
+      clickIconBox(
+        $("#edu-tutoring-form-2"),
+        $("#edu-tutoring-form-2-3"),
+        "#FFFFFF",
+        "#969939",
+        false,
+        "edu-tutoring-input-2"
+      );
+    });
 
-  $("#edu-tutoring-form-3-3").on("mouseenter", () => {
-    hoverTextOrIconBox($("#edu-tutoring-form-3-3"), false, "#FFFFFF");
-  });
-  $("#edu-tutoring-form-3-3").on("mouseleave", () => {
-    hoverTextOrIconBox($("#edu-tutoring-form-3-3"), true, "#FFFFFF");
-  });
-  $("#edu-tutoring-form-3-3").on("click", () => {
-    clickIconBox(
-      $("#edu-tutoring-form-3"),
-      $("#edu-tutoring-form-3-3"),
-      "#FFFFFF",
-      "#969939",
-      false,
-      "edu-tutoring-input-3"
-    );
-  });
+    $("#edu-tutoring-form-3-1").on("mouseenter", () => {
+      hoverTextOrIconBox($("#edu-tutoring-form-3-1"), false, "#FFFFFF");
+    });
+    $("#edu-tutoring-form-3-1").on("mouseleave", () => {
+      hoverTextOrIconBox($("#edu-tutoring-form-3-1"), true, "#FFFFFF");
+    });
+    $("#edu-tutoring-form-3-1").on("click", () => {
+      clickIconBox(
+        $("#edu-tutoring-form-3"),
+        $("#edu-tutoring-form-3-1"),
+        "#FFFFFF",
+        "#969939",
+        false,
+        "edu-tutoring-input-3"
+      );
+    });
 
-  $("#edu-tutoring-form-submit").on("mouseenter", () => {
-    hoverTextOrIconBox($("#edu-tutoring-form-submit"), false, "#FFFFFF");
-  });
-  $("#edu-tutoring-form-submit").on("mouseleave", () => {
-    hoverTextOrIconBox($("#edu-tutoring-form-submit"), true, "#FFFFFF");
-  });
-  $("#edu-tutoring-form-submit").on("click", () => {
-    // Check if any input empty
-    for(let i=0; i<3; i++) {
-      if(!sessionStorage.getItem(`edu-tutoring-input-${i+1}`)) {
-        $('#edu-tutoring-form-submit-error').show();
-        break;
-      } else {
+    $("#edu-tutoring-form-3-2").on("mouseenter", () => {
+      hoverTextOrIconBox($("#edu-tutoring-form-3-2"), false, "#FFFFFF");
+    });
+    $("#edu-tutoring-form-3-2").on("mouseleave", () => {
+      hoverTextOrIconBox($("#edu-tutoring-form-3-2"), true, "#FFFFFF");
+    });
+    $("#edu-tutoring-form-3-2").on("click", () => {
+      clickIconBox(
+        $("#edu-tutoring-form-3"),
+        $("#edu-tutoring-form-3-2"),
+        "#FFFFFF",
+        "#969939",
+        false,
+        "edu-tutoring-input-3"
+      );
+    });
+
+    $("#edu-tutoring-form-3-3").on("mouseenter", () => {
+      hoverTextOrIconBox($("#edu-tutoring-form-3-3"), false, "#FFFFFF");
+    });
+    $("#edu-tutoring-form-3-3").on("mouseleave", () => {
+      hoverTextOrIconBox($("#edu-tutoring-form-3-3"), true, "#FFFFFF");
+    });
+    $("#edu-tutoring-form-3-3").on("click", () => {
+      clickIconBox(
+        $("#edu-tutoring-form-3"),
+        $("#edu-tutoring-form-3-3"),
+        "#FFFFFF",
+        "#969939",
+        false,
+        "edu-tutoring-input-3"
+      );
+    });
+
+    $("#edu-tutoring-form-submit").on("mouseenter", () => {
+      hoverTextOrIconBox($("#edu-tutoring-form-submit"), false, "#FFFFFF");
+    });
+    $("#edu-tutoring-form-submit").on("mouseleave", () => {
+      hoverTextOrIconBox($("#edu-tutoring-form-submit"), true, "#FFFFFF");
+    });
+    $("#edu-tutoring-form-submit").on("click", () => {
+      // Check if any input empty
+      var validCtr = 0;
+      for(let i=0; i<3; i++) {
+        if(sessionStorage.getItem(`edu-tutoring-input-${i+1}`)) {
+          validCtr++;
+        }
+      }
+      if(validCtr == 3) {
         $('#edu-tutoring-form-submit-error').hide();
         displayLoadingScreen($('#edu-tutoring-form'), "Bitte einen Moment Geduld...", "Wir sind auf der Suche nach dem besten Angebot nur für Dich :)", '#FFFFFF');
-      }
-    }
+      } else {
+        $('#edu-tutoring-form-submit-error').show();
+      };
+    });
   });
-});
