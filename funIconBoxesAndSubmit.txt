@@ -16,9 +16,13 @@ function initializeIconBox(element, color) {
   setTimeout(() => {
     var svg = element.find("svg");
     var paths = svg.find("path");
+    var circles = svg.find("circle");
+    var allPaths = [...paths, ...circles];
+    console.log(paths);
+    console.log(allPaths);
     var text = element.find("h3")[0];
-    for (var i = 0; i < paths.length; i++) {
-      paths[i].style.fill = color;
+    for (var i = 0; i < allPaths.length; i++) {
+      allPaths[i].style.fill = color;
     }
     text.style.color = color;
     element.css("border-color", color);
@@ -89,9 +93,12 @@ function clickIconBox(
   setTimeout(() => {
     var svg = element.find("svg");
     var paths = svg.find("path");
+    var circles = svg.find("circle");
+    var allPaths = [...paths, ...circles];
+    console.log(allPaths);
     var text = element.find("h3")[0];
-    for (var i = 0; i < paths.length; i++) {
-      paths[i].style.fill = colorPost;
+    for (var i = 0; i < allPaths.length; i++) {
+      allPaths[i].style.fill = colorPost;
     }
     text.style.color = colorPost;
     element.css(

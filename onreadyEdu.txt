@@ -18,7 +18,8 @@
     initializeArrowButton($("#edu-intro-button-1"), "#FFFFFF");
     initializeArrowButton($("#edu-tutoring-form-submit"), "#FFFFFF");
     initializeArrowButton($("#edu-tutoring-results-button"), "#FFFFFF");
-
+	initializeArrowButton($("#edu-subjects-button"), "#969939");
+    
     initializeIconBox($("#edu-tutoring-form-1-1"), "#FFFFFF");
     initializeIconBox($("#edu-tutoring-form-1-2"), "#FFFFFF");
     initializeIconBox($("#edu-tutoring-form-1-3"), "#FFFFFF");
@@ -29,6 +30,22 @@
     initializeIconBox($("#edu-tutoring-form-3-2"), "#FFFFFF");
     initializeIconBox($("#edu-tutoring-form-3-3"), "#FFFFFF");
 
+    /* --------------------------------------------------------------------
+    ARROW BUTTONS + LOGO
+    -------------------------------------------------------------------- */
+    $(".logo").on("mouseenter", () => {
+      $(".logo").css("cursor","pointer");
+    });
+    $(".logo").on("mouseleave", () => {
+      $(".logo").css("cursor","pointer");
+    });
+    $(".main-header-logo").on("click", () => {
+      window.location.href = mainLink;
+    });
+    $(".edu-header-logo").on("click", () => {
+      window.location.href = mainLink + "/edu-home";
+    });
+    
     $("#edu-intro-button-1").on("mouseenter", () => {
       hoverArrowButton($("#edu-intro-button-1"), false);
     });
@@ -229,6 +246,16 @@
     });
     $("#edu-tutoring-form-results-button").on("mouseleave", () => {
       hoverArrowButton($("#edu-tutoring-results-button"), true);
+    });
+    
+    $("#edu-subjects-button").on("mouseenter", () => {
+      hoverArrowButton($("#edu-subjects-button"), false);
+    });
+    $("#edu-subjects-button").on("mouseleave", () => {
+      hoverArrowButton($("#edu-subjects-button"), true);
+    });
+    $("#edu-subjects-button").on("click", () => {
+      window.location.href = "https://jayvee-53ad46.webflow.io/subjects";
     });
     
   });
