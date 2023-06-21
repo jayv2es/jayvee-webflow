@@ -19,7 +19,7 @@ $(document).ready(() => {
   $("#edu-tutoring-form-container-results").hide();
   $("#edusubjects-list-2").hide();
 
-  initializeArrowButton($("#edu-intro-button-1"), "#FF0000");
+  initializeArrowButton($("#edu-intro-button-1"), "#00FF00");
   initializeArrowButton($("#edu-tutoring-form-submit"), "#FFFFFF");
   initializeArrowButton($("#edu-subjects-button"), "#969939");
   initializeArrowButton($("#edupacks-button"), "#969939");
